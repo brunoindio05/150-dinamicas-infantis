@@ -200,6 +200,11 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   .nav-btn:hover{background:var(--orange);color:#fff;}
   .carousel-dots{display:flex;justify-content:center;gap:7px;margin-top:14px;}
   .cdot{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.2s;}
+  .carousel-img{position:relative;max-width:300px;margin:0 auto;}
+  .carousel-img-track{overflow:hidden;border-radius:20px;}
+  .carousel-img-slides{display:flex;transition:transform .4s ease;}
+  .img-slide{min-width:100%;aspect-ratio:9/16;}
+  .img-slide img{width:100%;height:100%;object-fit:cover;display:block;border-radius:20px;}
   .cdot.active{background:var(--red);width:20px;border-radius:5px;}
 
   /* ===== BÔNUS ===== */
@@ -331,6 +336,25 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
     text-decoration:none;
   }
 
+  .garantia{background:var(--cream-2);}
+  .garantia-box{
+    max-width:680px;margin:0 auto;text-align:center;
+    background:#F3EEFC;border:1px solid #E1D4F7;border-radius:22px;padding:40px 30px;
+  }
+  .garantia-seal{
+    width:110px;height:110px;border-radius:50%;margin:0 auto 20px;
+    background:radial-gradient(circle,#FFD76B 0%,#F0A93B 70%,#D6862A 100%);
+    border:3px solid #F7E7B4;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    box-shadow:0 8px 20px rgba(214,134,42,.35);
+  }
+  .garantia-seal .seal-num{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:34px;color:#2B2118;line-height:1;}
+  .garantia-seal .seal-label{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:10px;color:#2B2118;line-height:1.2;letter-spacing:.03em;margin-top:2px;}
+  .garantia-box h3{font-size:22px;font-weight:800;color:#3A1E66;margin-bottom:12px;}
+  .garantia-box p{font-size:15px;color:var(--ink-soft);font-weight:600;line-height:1.6;margin-bottom:14px;}
+  .garantia-secure{font-size:14px;color:var(--ink-soft);font-weight:700;margin-bottom:18px;}
+  .garantia-metodos{max-width:260px;width:100%;height:auto;margin:0 auto;display:block;}
+
   /* ===== FAQ ===== */
   .faq{background:var(--cream-2);}
   .faq-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
@@ -355,6 +379,7 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   .guarantee span{font-size:13.5px;color:var(--ink-soft);font-weight:600;}
 
   footer{padding:30px 0;text-align:center;font-size:12.5px;color:var(--ink-soft);font-weight:600;}
+  .footer-seguranca{max-width:320px;width:100%;height:auto;display:block;margin:0 auto 14px;}
 
   /* ===== POPUP ===== */
   .overlay{
@@ -407,7 +432,34 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
     section{padding:48px 0;}
     .timer .box{min-width:42px;font-size:17px;padding:5px 8px;}
   }
+
+  .social-proof{
+    position:fixed;top:16px;right:16px;z-index:200;
+    max-width:290px;
+  }
+  .sp-card{
+    display:flex;align-items:flex-start;gap:10px;
+    background:#fff;border-radius:14px;padding:12px 14px;
+    box-shadow:0 10px 26px rgba(0,0,0,.14);border:1px solid var(--line);
+    opacity:0;transform:translateX(20px);
+    transition:opacity .35s ease,transform .35s ease;
+  }
+  .sp-card.show{opacity:1;transform:translateX(0);}
+  .sp-icon{
+    width:32px;height:32px;border-radius:50%;flex-shrink:0;
+    background:#E7F7EC;display:flex;align-items:center;justify-content:center;font-size:15px;
+  }
+  .sp-name{font-weight:800;font-size:13.5px;color:var(--ink);}
+  .sp-text{font-size:12.5px;color:var(--ink-soft);font-weight:600;line-height:1.35;}
+  .sp-text .sp-plan{color:var(--red);font-weight:800;}
+  .sp-loc{font-size:11px;color:#A69C90;font-weight:600;margin-top:2px;}
+  @media(max-width:600px){
+    .social-proof{top:12px;right:12px;left:12px;max-width:none;}
+  }
 </style>
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/crn9tu8wdv.js" async type="module"></script>
+<style>wistia-player[media-id='crn9tu8wdv']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/crn9tu8wdv/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style>
 </head>
 <body>
 
@@ -434,10 +486,7 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   <p class="sub">Pare de perder tempo pensando em atividade nova, organizadas por objetivo, pra você abrir e aplicar na hora, sem gastar sua noite planejando aula.</p>
 
   <div class="video-wrap">
-    <div class="placeholder">
-      <div class="play-btn"></div>
-      <div class="vid-caption">Vídeo de apresentação<br>(formato 9:16)</div>
-    </div>
+    <wistia-player media-id="crn9tu8wdv" aspect="0.5625" style="width:100%;height:100%;position:absolute;inset:0;"></wistia-player>
   </div>
 
   <a href="#oferta" class="cta-btn">Quero garantir as +150 dinâmicas 🎉</a>
@@ -448,7 +497,7 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   <div class="wrap">
     <div class="section-head">
       <h2>O que você vai receber</h2>
-      <p>Um material pronto pra consultar sempre que precisar de uma ideia nova</p>
+      <p>Um arquivo pronto com +150 Dinâmicas par Ed. Infantil alinhadas com a BNCC, esses são alguns exemplos:</p>
     </div>
     <div class="receber-grid">
       <div class="receber-item"><div class="ico">🤝</div><div><strong>Integração</strong><span>Pra turma se conhecer e criar vínculo logo no início</span></div></div>
@@ -465,51 +514,27 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- ===== DEPOIMENTOS ===== -->
-<section class="depo">
+<!-- ===== DEPOIMENTOS EM IMAGEM ===== -->
+<section class="depo-img">
   <div class="wrap">
     <div class="section-head">
       <h2>Quem já usa, recomenda</h2>
       <p>Professoras que já aplicam as dinâmicas em sala</p>
     </div>
-    <div class="carousel">
-      <div class="carousel-track">
-        <div class="carousel-slides" id="slides">
-          <div class="slide">
-            <div class="depo-card">
-              <div class="depo-stars">★★★★★</div>
-              <div class="depo-text">"Economizei muito tempo de planejamento. Agora eu só abro o material e já sei o que fazer com a turma."</div>
-              <div class="depo-who"><img src="img/mariana.webp" alt="Mariana S." class="depo-avatar"><div><div class="depo-name">Mariana S.</div><div class="depo-role">Professora de Educação Infantil</div></div></div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="depo-card">
-              <div class="depo-stars">★★★★★</div>
-              <div class="depo-text">"As dinâmicas de emoções mudaram a rotina da minha sala. As crianças ficaram muito mais participativas."</div>
-              <div class="depo-who"><img src="img/camila.webp" alt="Camila R." class="depo-avatar"><div><div class="depo-name">Camila R.</div><div class="depo-role">Educadora Infantil</div></div></div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="depo-card">
-              <div class="depo-stars">★★★★★</div>
-              <div class="depo-text">"Vale muito o preço. É só imprimir e aplicar, não precisa adaptar nada."</div>
-              <div class="depo-who"><img src="img/patricia.webp" alt="Patrícia L." class="depo-avatar"><div><div class="depo-name">Patrícia L.</div><div class="depo-role">Professora Auxiliar</div></div></div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="depo-card">
-              <div class="depo-stars">★★★★★</div>
-              <div class="depo-text">"Comprei o Premium pelos bônus e usei os brinquedos de papel na mesma semana. As crianças amaram."</div>
-              <div class="depo-who"><img src="img/juliana.webp" alt="Juliana A." class="depo-avatar"><div><div class="depo-name">Juliana A.</div><div class="depo-role">Professora de Educação Infantil</div></div></div>
-            </div>
-          </div>
+    <div class="carousel-img">
+      <div class="carousel-img-track">
+        <div class="carousel-img-slides" id="imgSlides">
+          <div class="img-slide"><img src="img/img depo 1.png" alt="Depoimento 1" loading="lazy"></div>
+          <div class="img-slide"><img src="img/img depo 2.png" alt="Depoimento 2" loading="lazy"></div>
+          <div class="img-slide"><img src="img/img depo 3.png" alt="Depoimento 3" loading="lazy"></div>
+          <div class="img-slide"><img src="img/img depo 4.png" alt="Depoimento 4" loading="lazy"></div>
         </div>
       </div>
       <div class="carousel-nav">
-        <button class="nav-btn" id="prevBtn">‹</button>
-        <button class="nav-btn" id="nextBtn">›</button>
+        <button class="nav-btn" id="imgPrevBtn">‹</button>
+        <button class="nav-btn" id="imgNextBtn">›</button>
       </div>
-      <div class="carousel-dots" id="dots"></div>
+      <div class="carousel-dots" id="imgDots"></div>
     </div>
   </div>
 </section>
@@ -604,6 +629,71 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   </div>
 </section>
 
+<!-- ===== DEPOIMENTOS ===== -->
+<section class="depo">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Quem já usa, recomenda</h2>
+      <p>Professoras que já aplicam as dinâmicas em sala</p>
+    </div>
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-slides" id="slides">
+          <div class="slide">
+            <div class="depo-card">
+              <div class="depo-stars">★★★★★</div>
+              <div class="depo-text">"Economizei muito tempo de planejamento. Agora eu só abro o material e já sei o que fazer com a turma."</div>
+              <div class="depo-who"><img src="img/mariana.webp" alt="Mariana S." class="depo-avatar"><div><div class="depo-name">Mariana S.</div><div class="depo-role">Professora de Educação Infantil</div></div></div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="depo-card">
+              <div class="depo-stars">★★★★★</div>
+              <div class="depo-text">"As dinâmicas de emoções mudaram a rotina da minha sala. As crianças ficaram muito mais participativas."</div>
+              <div class="depo-who"><img src="img/camila.webp" alt="Camila R." class="depo-avatar"><div><div class="depo-name">Camila R.</div><div class="depo-role">Educadora Infantil</div></div></div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="depo-card">
+              <div class="depo-stars">★★★★★</div>
+              <div class="depo-text">"Vale muito o preço. É só imprimir e aplicar, não precisa adaptar nada."</div>
+              <div class="depo-who"><img src="img/patricia.webp" alt="Patrícia L." class="depo-avatar"><div><div class="depo-name">Patrícia L.</div><div class="depo-role">Professora Auxiliar</div></div></div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="depo-card">
+              <div class="depo-stars">★★★★★</div>
+              <div class="depo-text">"Comprei o Premium pelos bônus e usei os brinquedos de papel na mesma semana. As crianças amaram."</div>
+              <div class="depo-who"><img src="img/juliana.webp" alt="Juliana A." class="depo-avatar"><div><div class="depo-name">Juliana A.</div><div class="depo-role">Professora de Educação Infantil</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="nav-btn" id="prevBtn">‹</button>
+        <button class="nav-btn" id="nextBtn">›</button>
+      </div>
+      <div class="carousel-dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GARANTIA ===== -->
+<section class="garantia">
+  <div class="wrap">
+    <div class="garantia-box">
+      <div class="garantia-seal">
+        <div class="seal-num">7</div>
+        <div class="seal-label">DIAS<br>GARANTIA</div>
+      </div>
+      <h3>Garantia Incondicional de 7 Dias</h3>
+      <p>Se por qualquer motivo você não ficar satisfeito com o material, basta enviar um e-mail em até 7 dias após a compra e devolvemos 100% do seu investimento.<br><strong>Sem perguntas!</strong></p>
+      <div class="garantia-secure">🔒 Sua compra é 100% segura e protegida</div>
+      <img src="img/metodos.webp" alt="Métodos de pagamento aceitos" class="garantia-metodos">
+    </div>
+  </div>
+</section>
+
 <!-- ===== QUEM SOMOS ===== -->
 <section class="quem">
   <div class="wrap">
@@ -649,6 +739,7 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
 </section>
 
 <footer>
+  <img src="img/seguranca.webp" alt="Compra 100% segura" class="footer-seguranca">
   © 2026 Mestres da Educação · Todos os direitos reservados
 </footer>
 
@@ -726,6 +817,25 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
     document.getElementById('prevBtn').onclick = ()=>{ index = (index-1+slideEls.length)%slideEls.length; render(); };
   })();
 
+  // ---- Carrossel de depoimentos em imagem ----
+  (function(){
+    const slides = document.getElementById('imgSlides');
+    const slideEls = slides.children;
+    const dotsWrap = document.getElementById('imgDots');
+    let index = 0;
+    for(let i=0;i<slideEls.length;i++){
+      const d = document.createElement('div');
+      d.className = 'cdot' + (i===0?' active':'');
+      dotsWrap.appendChild(d);
+    }
+    function render(){
+      slides.style.transform = `translateX(-${index*100}%)`;
+      [...dotsWrap.children].forEach((d,i)=> d.classList.toggle('active', i===index));
+    }
+    document.getElementById('imgNextBtn').onclick = ()=>{ index = (index+1)%slideEls.length; render(); };
+    document.getElementById('imgPrevBtn').onclick = ()=>{ index = (index-1+slideEls.length)%slideEls.length; render(); };
+  })();
+
   // ---- FAQ accordion ----
   document.querySelectorAll('.faq-q').forEach(btn=>{
     btn.addEventListener('click', ()=>{
@@ -769,7 +879,60 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
     window.location.href = 'https://ggcheckout.app/checkout/v2/Sx06SO0DdXvAaC3nPBky';
   });
   overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closePopup(); });
+
+  // ---- Notificações de prova social ----
+  (function(){
+    const nomes = [
+      "Bruna Pereira","Camila Souza","Fernanda Lima","Juliana Costa",
+      "Patrícia Almeida","Larissa Ferreira","Débora Santos","Aline Rodrigues",
+      "Vanessa Oliveira","Tatiane Carvalho"
+    ];
+    const locais = [
+      "Belo Horizonte, MG","Curitiba, PR","Fortaleza, CE","Porto Alegre, RS",
+      "Salvador, BA","Recife, PE","Goiânia, GO","Campinas, SP",
+      "Florianópolis, SC","Brasília, DF"
+    ];
+    const planos = ["Plano Básico","Plano Premium"];
+
+    let idx = 0;
+    let planoIdx = 0;
+
+    function showNotification(){
+      const nome = nomes[idx % nomes.length];
+      const local = locais[idx % locais.length];
+      const plano = planos[planoIdx % planos.length];
+      idx++;
+      planoIdx++;
+
+      const container = document.getElementById('socialProof');
+      if(!container) return;
+
+      const card = document.createElement('div');
+      card.className = 'sp-card';
+      card.innerHTML = `
+        <div class="sp-icon">🛍️</div>
+        <div>
+          <div class="sp-name">${nome}</div>
+          <div class="sp-text">Comprou o <span class="sp-plan">${plano}</span> agora</div>
+          <div class="sp-loc">${local}</div>
+        </div>
+      `;
+      container.innerHTML = '';
+      container.appendChild(card);
+      requestAnimationFrame(()=> card.classList.add('show'));
+
+      setTimeout(()=>{
+        card.classList.remove('show');
+        setTimeout(()=>{ if(card.parentNode) card.remove(); }, 400);
+      }, 5000);
+    }
+
+    setTimeout(showNotification, 4000);
+    setInterval(showNotification, 20000);
+  })();
 </script>
+
+<div id="socialProof" class="social-proof"></div>
 
 </body>
 </html>
