@@ -930,6 +930,12 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
     setTimeout(showNotification, 4000);
     setInterval(showNotification, 20000);
   })();
+
+  // ---- Dificultar clonagem casual (não impede clonagem técnica) ----
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+  document.querySelectorAll('img').forEach(function(img){
+    img.setAttribute('draggable', 'false');
+  });
 </script>
 
 <div id="socialProof" class="social-proof"></div>
