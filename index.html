@@ -605,7 +605,7 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
 <section class="oferta" id="oferta">
   <div class="wrap">
     <div class="section-head">
-      <h2>Escolha seu plano</h2>
+      <h2>Escolha seu KIT</h2>
       <p>Acesso imediato: você recebe direto no seu e-mail</p>
     </div>
     <div class="plans">
@@ -922,27 +922,24 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
 
   // ---- Notificações de prova social ----
   (function(){
-    const nomes = [
-      "Bruna Pereira","Camila Souza","Fernanda Lima","Juliana Costa",
-      "Patrícia Almeida","Larissa Ferreira","Débora Santos","Aline Rodrigues",
-      "Vanessa Oliveira","Tatiane Carvalho"
+    const notificacoes = [
+      { nome: "Mariana S.", cidade: "Belo Horizonte", kit: "Kit Premium" },
+      { nome: "Carlos E.", cidade: "Curitiba", kit: "Kit Básico" },
+      { nome: "Fernanda L.", cidade: "Recife", kit: "Kit Premium" },
+      { nome: "Juliana M.", cidade: "Porto Alegre", kit: "Kit Premium" },
+      { nome: "Rafael T.", cidade: "São Paulo", kit: "Kit Premium" },
+      { nome: "Patrícia G.", cidade: "Salvador", kit: "Kit Premium" },
+      { nome: "Camila R.", cidade: "Fortaleza", kit: "Kit Básico" },
+      { nome: "Bruna A.", cidade: "Goiânia", kit: "Kit Premium" },
+      { nome: "Luciana F.", cidade: "Campinas", kit: "Kit Premium" },
+      { nome: "Vanessa D.", cidade: "Brasília", kit: "Kit Básico" },
     ];
-    const locais = [
-      "Belo Horizonte, MG","Curitiba, PR","Fortaleza, CE","Porto Alegre, RS",
-      "Salvador, BA","Recife, PE","Goiânia, GO","Campinas, SP",
-      "Florianópolis, SC","Brasília, DF"
-    ];
-    const planos = ["Plano Básico","Plano Premium"];
 
     let idx = 0;
-    let planoIdx = 0;
 
     function showNotification(){
-      const nome = nomes[idx % nomes.length];
-      const local = locais[idx % locais.length];
-      const plano = planos[planoIdx % planos.length];
+      const n = notificacoes[idx % notificacoes.length];
       idx++;
-      planoIdx++;
 
       const container = document.getElementById('socialProof');
       if(!container) return;
@@ -952,9 +949,9 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
       card.innerHTML = `
         <div class="sp-icon">🛍️</div>
         <div>
-          <div class="sp-name">${nome}</div>
-          <div class="sp-text">Comprou o <span class="sp-plan">${plano}</span> agora</div>
-          <div class="sp-loc">${local}</div>
+          <div class="sp-name">${n.nome}</div>
+          <div class="sp-text">Comprou o <span class="sp-plan">${n.kit}</span> agora</div>
+          <div class="sp-loc">${n.cidade}</div>
         </div>
       `;
       container.innerHTML = '';
