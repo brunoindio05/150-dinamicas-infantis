@@ -441,12 +441,12 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   .modal ul{list-style:none;padding:0;margin:0 0 10px;}
   .modal ul li{font-size:13px;font-weight:600;padding:3px 0;display:flex;gap:8px;}
   .modal-btn-primary{
-    width:100%;background:var(--green);color:#fff;font-family:'Baloo 2',sans-serif;font-weight:800;
+    display:block;width:100%;background:var(--green);color:#fff;font-family:'Baloo 2',sans-serif;font-weight:800;
     font-size:13px;padding:11px;border-radius:12px;margin-bottom:8px;box-shadow:0 10px 22px rgba(63,167,114,.35);
-    animation:pulse-green 1.8s infinite;
+    animation:pulse-green 1.8s infinite;text-align:center;text-decoration:none;
   }
   .modal-btn-secondary{
-    width:100%;background:none;color:var(--ink-soft);font-weight:700;font-size:13.5px;padding:8px;text-decoration:underline;
+    display:block;width:100%;background:none;color:var(--ink-soft);font-weight:700;font-size:13.5px;padding:8px;text-decoration:underline;text-align:center;
   }
 
 
@@ -815,8 +815,8 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
       <li>BÔNUS: +1.000 Brinquedos de Papel</li>
       <li>BÔNUS: Kit Bíblico para Colorir</li>
     </ul>
-    <button class="modal-btn-primary">Quero desbloquear o Premium por R$ 19,90</button>
-    <button class="modal-btn-secondary" id="declineOffer">Não, obrigada. Quero só as +150 dinâmicas.</button>
+    <a href="https://ggcheckout.app/checkout/v2/Sx06SO0DdXvAaC3nPBky" class="modal-btn-primary" id="acceptOffer">Quero desbloquear o Premium por R$ 19,90</a>
+    <a href="https://ggcheckout.app/checkout/v2/WAANt5DApczvf7XDpuB2" class="modal-btn-secondary" id="declineOffer" target="_blank" rel="noopener">Não, obrigada. Quero só as +150 dinâmicas.</a>
   </div>
 </div>
 
@@ -913,12 +913,6 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
 
   document.getElementById('basicBtn').addEventListener('click', openPopup);
   document.getElementById('closeModal').addEventListener('click', closePopup);
-  document.getElementById('declineOffer').addEventListener('click', function(){
-    window.location.href = 'https://ggcheckout.app/checkout/v2/WAANt5DApczvf7XDpuB2';
-  });
-  document.querySelector('.modal-btn-primary').addEventListener('click', function(){
-    window.location.href = 'https://ggcheckout.app/checkout/v2/Sx06SO0DdXvAaC3nPBky';
-  });
   overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closePopup(); });
 
   // ---- Notificações de prova social ----
