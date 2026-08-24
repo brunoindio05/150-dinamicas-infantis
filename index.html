@@ -159,26 +159,15 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
 
   /* ===== O QUE VOCÊ VAI RECEBER ===== */
   .receber{background:var(--white);}
-  .receber-grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:16px;
-  }
-  .receber-item{
-    background:var(--cream);border:1px solid var(--line);
-    border-radius:16px;padding:20px;display:flex;gap:12px;align-items:flex-start;
-  }
-  .receber-item .ico{
-    width:38px;height:38px;border-radius:10px;background:var(--green-soft);
-    display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;
-  }
-  .receber-item strong{font-family:'Baloo 2',sans-serif;font-size:15px;display:block;margin-bottom:2px;}
-  .receber-item span{font-size:14px;color:var(--ink-soft);font-weight:600;}
   .entregaveis-carousel{
     max-width:100%;margin:0 auto 28px;overflow:hidden;
   }
   .entregaveis-track{
     display:flex;width:max-content;
     animation:entregaveis-scroll 24s linear infinite;
+  }
+  .entregaveis-track-reverse{
+    animation-direction:reverse;
   }
   .entregaveis-slide{
     width:220px;flex-shrink:0;aspect-ratio:1/1.4142;
@@ -456,27 +445,28 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   }
 
   .social-proof{
-    position:fixed;top:16px;right:16px;z-index:200;
-    max-width:290px;
+    position:fixed;top:16px;right:16px;left:auto;z-index:9999;
+    max-width:240px;width:calc(100% - 32px);
   }
   .sp-card{
-    display:flex;align-items:flex-start;gap:10px;
-    background:#fff;border-radius:14px;padding:12px 14px;
+    display:flex;align-items:flex-start;gap:8px;
+    background:#fff;border-radius:14px;padding:10px 12px;
     box-shadow:0 10px 26px rgba(0,0,0,.14);border:1px solid var(--line);
     opacity:0;transform:translateX(20px);
     transition:opacity .35s ease,transform .35s ease;
   }
   .sp-card.show{opacity:1;transform:translateX(0);}
   .sp-icon{
-    width:32px;height:32px;border-radius:50%;flex-shrink:0;
-    background:#E7F7EC;display:flex;align-items:center;justify-content:center;font-size:15px;
+    width:28px;height:28px;border-radius:50%;flex-shrink:0;
+    background:#DCFCE7;display:flex;align-items:center;justify-content:center;color:#22C55E;
   }
-  .sp-name{font-weight:800;font-size:13.5px;color:var(--ink);}
-  .sp-text{font-size:12.5px;color:var(--ink-soft);font-weight:600;line-height:1.35;}
+  .sp-icon svg{width:15px;height:15px;}
+  .sp-name{font-weight:800;font-size:12.5px;color:var(--ink);}
+  .sp-text{font-size:12px;color:var(--ink-soft);font-weight:600;line-height:1.35;}
   .sp-text .sp-plan{color:var(--red);font-weight:800;}
-  .sp-loc{font-size:11px;color:#A69C90;font-weight:600;margin-top:2px;}
+  .sp-loc{font-size:10.5px;color:#A69C90;font-weight:600;margin-top:2px;}
   @media(max-width:600px){
-    .social-proof{top:12px;right:12px;left:12px;max-width:none;}
+    .social-proof{top:12px;right:12px;left:auto;max-width:240px;width:calc(100% - 24px);}
   }
 </style>
 <script src="https://fast.wistia.com/player.js" async></script>
@@ -519,7 +509,7 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   <div class="wrap">
     <div class="section-head">
       <h2>O que você vai receber</h2>
-      <p>Um arquivo pronto com +150 Dinâmicas para Ed. Infantil alinhadas com a BNCC, esses são alguns exemplos:</p>
+      <p>Um arquivo pronto com +150 Dinâmicas para Ed. Infantil e +200 Dinâmicas de Alfabetização alinhadas com a BNCC, esses são alguns exemplos:</p>
     </div>
     <div class="entregaveis-carousel">
       <div class="entregaveis-track" id="entregaveis-track">
@@ -537,17 +527,21 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
         <div class="entregaveis-slide"><img src="img/cartao%206.webp" alt="Prévia do material 6"></div>
       </div>
     </div>
-    <div class="receber-grid">
-      <div class="receber-item"><div class="ico">🤝</div><div><strong>Integração</strong><span>Pra turma se conhecer e criar vínculo logo no início</span></div></div>
-      <div class="receber-item"><div class="ico">🧠</div><div><strong>Raciocínio e criatividade</strong><span>Desafios leves que estimulam a cabecinha das crianças</span></div></div>
-      <div class="receber-item"><div class="ico">❤️</div><div><strong>Emoções</strong><span>Atividades pra trabalhar sentimentos de forma lúdica</span></div></div>
-      <div class="receber-item"><div class="ico">🗣️</div><div><strong>Comunicação</strong><span>Dinâmicas que incentivam a criança a se expressar</span></div></div>
-      <div class="receber-item"><div class="ico">🎭</div><div><strong>Expressão corporal</strong><span>Movimento e brincadeira pra gastar energia com propósito</span></div></div>
-      <div class="receber-item"><div class="ico">🎨</div><div><strong>Arte e imaginação</strong><span>Atividades criativas fáceis de montar em sala</span></div></div>
-      <div class="receber-item"><div class="ico">🎵</div><div><strong>Música e ritmo</strong><span>Brincadeiras cantadas e com som pra animar a aula</span></div></div>
-      <div class="receber-item"><div class="ico">👥</div><div><strong>Cooperação</strong><span>Dinâmicas em grupo que ensinam a trabalhar junto</span></div></div>
-      <div class="receber-item"><div class="ico">😂</div><div><strong>Divertidas</strong><span>Pra quebrar a rotina e arrancar risada da turma</span></div></div>
-      <div class="receber-item"><div class="ico">🌟</div><div><strong>Momentos especiais</strong><span>Datas comemorativas e ocasiões fora do comum</span></div></div>
+    <div class="entregaveis-carousel entregaveis-carousel-reverse">
+      <div class="entregaveis-track entregaveis-track-reverse" id="entregaveis-track-2">
+        <div class="entregaveis-slide"><img src="img/cartao%207.webp" alt="Prévia do material 7"></div>
+        <div class="entregaveis-slide"><img src="img/cartao%208.webp" alt="Prévia do material 8"></div>
+        <div class="entregaveis-slide"><img src="img/cartao%209.webp" alt="Prévia do material 9"></div>
+        <div class="entregaveis-slide"><img src="img/cartao%2010.webp" alt="Prévia do material 10"></div>
+        <div class="entregaveis-slide"><img src="img/cartao%2011.webp" alt="Prévia do material 11"></div>
+        <div class="entregaveis-slide"><img src="img/cartao%2012.webp" alt="Prévia do material 12"></div>
+        <div class="entregaveis-slide"><img src="img/cartao%207.webp" alt="Prévia do material 7"></div>
+        <div class="entregaveis-slide"><img src="img/cartao%208.webp" alt="Prévia do material 8"></div>
+        <div class="entregaveis-slide"><img src="img/cartao%209.webp" alt="Prévia do material 9"></div>
+        <div class="entregaveis-slide"><img src="img/cartao%2010.webp" alt="Prévia do material 10"></div>
+        <div class="entregaveis-slide"><img src="img/cartao%2011.webp" alt="Prévia do material 11"></div>
+        <div class="entregaveis-slide"><img src="img/cartao%2012.webp" alt="Prévia do material 12"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -581,8 +575,8 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
 <section class="bonus">
   <div class="wrap">
     <div class="section-head">
-      <h2>4 bônus exclusivos no plano Premium</h2>
-      <p>Além das +150 dinâmicas, você ainda recebe</p>
+      <h2>4 Bônus Exclusivos</h2>
+      <p>Além das dinâmicas, você ainda recebe</p>
     </div>
     <div class="bonus-grid">
       <div class="bonus-card"><span class="bonus-emoji">✍️</span><span class="bonus-tag">Bônus #1</span><h3>+50 Atividades de Silabário Cursivo</h3><p>Atividades extras para trabalhar escrita e coordenação motora.</p><div class="bonus-price"><span class="old-price">R$ 27,90</span><span class="free-tag">Grátis</span></div></div>
@@ -823,6 +817,10 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
 </div>
 
 <script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
   // Nenhum botão desta página dispara evento de pixel: o InitiateCheckout
   // é disparado exclusivamente na página/plataforma de checkout, fora deste HTML.
 
@@ -921,15 +919,20 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   (function(){
     const notificacoes = [
       { nome: "Mariana S.", cidade: "Belo Horizonte", kit: "Kit Premium" },
-      { nome: "Carlos E.", cidade: "Curitiba", kit: "Kit Básico" },
+      { nome: "Carla E.", cidade: "Curitiba", kit: "Kit Básico" },
       { nome: "Fernanda L.", cidade: "Recife", kit: "Kit Premium" },
       { nome: "Juliana M.", cidade: "Porto Alegre", kit: "Kit Premium" },
-      { nome: "Rafael T.", cidade: "São Paulo", kit: "Kit Premium" },
+      { nome: "Rafaela T.", cidade: "São Paulo", kit: "Kit Premium" },
       { nome: "Patrícia G.", cidade: "Salvador", kit: "Kit Premium" },
       { nome: "Camila R.", cidade: "Fortaleza", kit: "Kit Básico" },
       { nome: "Bruna A.", cidade: "Goiânia", kit: "Kit Premium" },
       { nome: "Luciana F.", cidade: "Campinas", kit: "Kit Premium" },
       { nome: "Vanessa D.", cidade: "Brasília", kit: "Kit Básico" },
+      { nome: "Beatriz F.", cidade: "Manaus", kit: "Kit Premium" },
+      { nome: "Larissa N.", cidade: "Florianópolis", kit: "Kit Premium" },
+      { nome: "Tainá C.", cidade: "Natal", kit: "Kit Básico" },
+      { nome: "Débora S.", cidade: "Belém", kit: "Kit Premium" },
+      { nome: "Renata P.", cidade: "Uberlândia", kit: "Kit Premium" },
     ];
 
     let idx = 0;
@@ -944,7 +947,11 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
       const card = document.createElement('div');
       card.className = 'sp-card';
       card.innerHTML = `
-        <div class="sp-icon">🛍️</div>
+        <div class="sp-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.1 15.9 4.5 17 5.4 17H17M17 17C15.9 17 15 17.9 15 19C15 20.1 15.9 21 17 21C18.1 21 19 20.1 19 19C19 17.9 18.1 17 17 17ZM9 19C9 20.1 8.1 21 7 21C5.9 21 5 20.1 5 19C5 17.9 5.9 17 7 17C8.1 17 9 17.9 9 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div>
           <div class="sp-name">${n.nome}</div>
           <div class="sp-text">Comprou o <span class="sp-plan">${n.kit}</span> agora</div>
@@ -966,7 +973,6 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   })();
 
   // ---- Dificultar clonagem casual (não impede clonagem técnica) ----
-  document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
   document.querySelectorAll('img').forEach(function(img){
     img.setAttribute('draggable', 'false');
   });
