@@ -69,34 +69,25 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   }
   button{font-family:inherit;cursor:pointer;border:none;}
 
-  /* ===== SCARCITY BAR (scrolls away, not fixed) ===== */
-  .scarcity{
-    background:linear-gradient(135deg,var(--red) 0%, var(--red-dark) 100%);
-    color:#fff;
-    padding:16px 20px 20px;
-    text-align:center;
+  /* ===== URGENCY RIBBON ===== */
+  .urgency-ribbon {
+    width: 100%;
+    background: linear-gradient(90deg, #B91C1C, #DC2626, #B91C1C);
+    padding: 14px 20px;
+    text-align: center;
   }
-  .scarcity .row{
-    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
-    gap:10px 14px;margin-bottom:10px;
+  .ribbon-text {
+    color: #fff;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
   }
-  .scarcity .pill{
-    display:inline-flex;align-items:center;gap:8px;
-    background:rgba(255,255,255,.14);
-    border:1px solid rgba(255,255,255,.35);
-    padding:6px 14px;border-radius:999px;
-    font-weight:700;font-size:13px;
+  @media (max-width: 480px) {
+    .ribbon-text {
+      font-size: 13px;
+    }
   }
-  .dot{width:8px;height:8px;border-radius:50%;background:#5CE07A;box-shadow:0 0 0 4px rgba(92,224,122,.25);}
-  .timer{display:flex;gap:8px;align-items:center;justify-content:center;}
-  .timer .box{
-    background:#fff;color:var(--red-dark);
-    border-radius:10px;padding:6px 10px;min-width:48px;text-align:center;
-    font-family:'Baloo 2',sans-serif;font-weight:800;font-size:20px;
-  }
-  .timer .label{font-size:9px;text-transform:uppercase;letter-spacing:.05em;font-weight:700;display:block;margin-top:2px;}
-  .timer .sep{font-weight:800;font-size:18px;opacity:.7;}
-  .scarcity .cta-line{font-weight:800;font-size:15px;}
 
   /* ===== HERO ===== */
   .hero{padding:56px 0 40px;text-align:center;}
@@ -445,7 +436,6 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
 
   @media(max-width:600px){
     section{padding:48px 0;}
-    .timer .box{min-width:42px;font-size:17px;padding:5px 8px;}
   }
 
   .social-proof{
@@ -480,19 +470,8 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
 <body>
 
 <!-- ===== SCARCITY BAR (não fixo, some ao rolar) ===== -->
-<div class="scarcity">
-  <div class="row">
-    <span class="pill"><span class="dot"></span> OFERTA ATIVA</span>
-    <span class="pill">🔥 A oferta encerra em</span>
-  </div>
-  <div class="timer" id="timer">
-    <div class="box"><span id="hh">01</span><span class="label">Horas</span></div>
-    <span class="sep">:</span>
-    <div class="box"><span id="mm">34</span><span class="label">Min</span></div>
-    <span class="sep">:</span>
-    <div class="box"><span id="ss">33</span><span class="label">Seg</span></div>
-  </div>
-  <div class="cta-line" style="margin-top:12px;">Garanta agora antes que o preço suba!</div>
+<div class="urgency-ribbon">
+  <span class="ribbon-text">🔥 OFERTA SOMENTE HOJE <span id="urgency-date"></span></span>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -839,19 +818,15 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   // Nenhum botão desta página dispara evento de pixel: o InitiateCheckout
   // é disparado exclusivamente na página/plataforma de checkout, fora deste HTML.
 
-  // ---- Countdown (visual, reinicia em 1h34min33s ao carregar) ----
+  // ---- Data da oferta (atualiza automaticamente ao carregar) ----
   (function(){
-    let total = (1*3600) + (34*60) + 33;
-    const hh = document.getElementById('hh'), mm = document.getElementById('mm'), ss = document.getElementById('ss');
-    function tick(){
-      if(total <= 0){ total = (1*3600)+(34*60)+33; }
-      total--;
-      const h = Math.floor(total/3600), m = Math.floor((total%3600)/60), s = total%60;
-      hh.textContent = String(h).padStart(2,'0');
-      mm.textContent = String(m).padStart(2,'0');
-      ss.textContent = String(s).padStart(2,'0');
-    }
-    setInterval(tick,1000);
+    var el = document.getElementById('urgency-date');
+    if(!el) return;
+    var hoje = new Date();
+    var dia = String(hoje.getDate()).padStart(2, '0');
+    var mes = String(hoje.getMonth() + 1).padStart(2, '0');
+    var ano = hoje.getFullYear();
+    el.textContent = dia + '/' + mes + '/' + ano;
   })();
 
   // ---- Carrossel de depoimentos ----
