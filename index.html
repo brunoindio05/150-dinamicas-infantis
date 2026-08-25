@@ -102,34 +102,18 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
     font-size:16px;color:var(--ink-soft);font-weight:600;
   }
 
-  .video-wrap{
-    margin:34px auto 0;
-    width:min(300px, 78vw);
-    aspect-ratio:9/16;
-    border-radius:22px;
-    background:linear-gradient(160deg,#2B2118,#463526);
-    position:relative;overflow:hidden;
-    box-shadow:var(--shadow);
-    border:6px solid #fff;
+  .cover-image-wrapper {
+    max-width: 480px;
+    margin: 24px auto;
+    background: transparent;
   }
-  .video-wrap .placeholder{
-    position:absolute;inset:0;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;gap:14px;color:#fff;
-    background:
-      radial-gradient(circle at 50% 30%, rgba(244,166,58,.35), transparent 60%),
-      linear-gradient(160deg,#2B2118,#3A2C1E);
+  .cover-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: block;
+    border: none;
+    border-radius: 0;
   }
-  .play-btn{
-    width:64px;height:64px;border-radius:50%;
-    background:var(--orange);display:flex;align-items:center;justify-content:center;
-    box-shadow:0 8px 20px rgba(244,166,58,.5);
-  }
-  .play-btn::after{
-    content:'';width:0;height:0;
-    border-left:18px solid #2B2118;border-top:11px solid transparent;border-bottom:11px solid transparent;
-    margin-left:4px;
-  }
-  .video-wrap .vid-caption{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:14px;opacity:.85;text-align:center;padding:0 24px;}
 
   .cta-btn{
     font-family:'Baloo 2',sans-serif;font-weight:800;font-size:17px;
@@ -463,9 +447,6 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
     .social-proof{top:12px;right:12px;left:auto;max-width:240px;width:calc(100% - 24px);}
   }
 </style>
-<script src="https://fast.wistia.com/player.js" async></script>
-<script src="https://fast.wistia.com/embed/sg489xj830.js" async type="module"></script>
-<style>wistia-player[media-id='sg489xj830']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/sg489xj830/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style>
 </head>
 <body>
 
@@ -480,8 +461,8 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
   <h1>São<span> +150 Dinâmicas para Educação Infantil</span> para sua turma</h1>
   <p class="sub">Pare de perder tempo pensando em atividade nova, organizadas por objetivo, pra você abrir e aplicar na hora, sem gastar sua noite planejando aula.</p>
 
-  <div class="video-wrap">
-    <wistia-player media-id="sg489xj830" aspect="0.5625" style="width:100%;height:100%;position:absolute;inset:0;"></wistia-player>
+  <div class="cover-image-wrapper">
+    <img src="img/capa.webp" alt="+150 Dinâmicas para Educação Infantil" class="cover-image">
   </div>
 
   <a href="#oferta" class="cta-btn">Quero garantir as +150 dinâmicas 🎉</a>
