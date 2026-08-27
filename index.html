@@ -111,10 +111,25 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
     max-width:760px;margin:18px auto 0;
   }
   .hero h1 .titulo-destaque{color:#1670E8;}
+  .hero h1 .titulo-verde-2{color:#22C55E;}
   .nowrap-fim{white-space:nowrap;}
-  .hero .sub{
-    max-width:560px;margin:16px auto 0;
+  .hero .hero-subtitle{
+    text-align:center;
+    max-width:320px;
+    margin:16px auto 0;
+    line-height:1.6;
     font-size:16px;color:var(--ink-soft);font-weight:600;
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 22px;
+      line-height: 1.3;
+      padding: 0 8px;
+    }
+    .hero h1 .nowrap-fim {
+      white-space: normal;
+    }
   }
 
   .cover-image-wrapper {
@@ -128,6 +143,54 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
     display: block;
     border: none;
     border-radius: 0;
+  }
+
+  .hero-checklist-block {
+    max-width: 480px;
+    margin: 24px auto;
+    text-align: center;
+  }
+  .hero-checklist-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .hero-checklist-row-center {
+    justify-content: center;
+  }
+  .hero-check-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green-soft, #E7F5EC);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 999px;
+  }
+  .hero-check-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--green, #3FA772);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .hero-social-proof {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-top: 14px;
+  }
+  .hero-social-proof strong {
+    color: var(--ink);
   }
 
   .cta-btn{
@@ -469,11 +532,25 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
 <!-- ===== HERO ===== -->
 <header class="hero wrap">
   <span class="eyebrow">📚 Feito para professoras da educação infantil</span>
-  <h1>São <span class="titulo-destaque">+150 DINÂMICAS INTERATIVAS</span> <span class="nowrap-fim">para sua turma</span></h1>
-  <p class="sub">Pare de perder tempo pensando em atividade nova, organizadas por objetivo, pra você abrir e aplicar na hora, sem gastar sua noite planejando aula.</p>
+  <h1><span class="titulo-destaque">+150 Dinâmicas de Alfabetização</span> <span class="nowrap-fim">para você <span class="titulo-verde-2">nunca mais chegar na aula</span> sem saber o que fazer</span></h1>
+  <p class="hero-subtitle">Para professoras alfabetizadoras da Ed. Infantil ao 3º ano que chegam na segunda sem planejamento e sem energia.</p>
 
   <div class="cover-image-wrapper">
     <img src="img/capa.webp" alt="+150 Dinâmicas para Educação Infantil" class="cover-image">
+  </div>
+
+  <div class="hero-checklist-block">
+    <div class="hero-checklist-row">
+      <span class="hero-check-item"><span class="hero-check-icon">✓</span> Funciona em qualquer série</span>
+      <span class="hero-check-item"><span class="hero-check-icon">✓</span> Dentro ou fora da escola</span>
+      <span class="hero-check-item"><span class="hero-check-icon">✓</span> Ed. Infantil ao 3º ano</span>
+    </div>
+    <div class="hero-checklist-row hero-checklist-row-center">
+      <span class="hero-check-item"><span class="hero-check-icon">✓</span> Letras, sílabas e leitura</span>
+    </div>
+    <p class="hero-social-proof">
+      Mais de <strong>1.200 professoras alfabetizadoras</strong> já usam as dinâmicas e chegam na sala com confiança. Letras, sílabas, consciência fonológica e leitura, tudo organizado e pronto pra aplicar.
+    </p>
   </div>
 
   <a href="#oferta" class="cta-btn hero-cta">Quero garantir as dinâmicas</a>
@@ -597,7 +674,7 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
           <div class="plan-pay-once">pagamento único</div>
         </div>
         <div class="plan-divider"></div>
-        <div class="plan-heading"><span class="star">⭐</span> +150 Dinâmicas para Educação Infantil</div>
+        <div class="plan-heading"><span class="star">⭐</span> +150 Dinâmicas para Alfabetização Infantil</div>
         <ul class="plan-list">
           <li>Acesso digital imediato</li>
           <li>Garantia de 7 dias</li>
@@ -624,8 +701,7 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
           <div class="plan-save">Você economiza R$ 28,00</div>
         </div>
         <div class="plan-divider"></div>
-        <div class="plan-heading"><span class="star">⭐</span> +150 Dinâmicas para Educação Infantil</div>
-        <div class="plan-heading"><span class="star">⭐</span> +200 Dinâmicas de Alfabetização</div>
+        <div class="plan-heading"><span class="star">⭐</span> +150 Dinâmicas para Alfabetização Infantil</div>
         <div class="plan-heading"><span class="star">⭐</span> +400 Dinâmicas e Brincadeiras</div>
         <ul class="plan-list">
           <li>Organizadas por categoria</li>
@@ -879,7 +955,6 @@ src="https://www.facebook.com/tr?id=1735030811061246&ev=PageView&noscript=1"
     </div>
     <div class="plan-divider"></div>
     <div class="plan-heading"><span class="star">⭐</span> +600 Dinâmicas Infantis · Pacote Completo</div>
-    <div class="plan-heading"><span class="star">⭐</span> +200 Dinâmicas de Alfabetização</div>
     <div class="plan-heading"><span class="star">⭐</span> +400 Dinâmicas e Brincadeiras</div>
     <ul class="plan-list">
       <li>Tudo do Plano Premium incluso</li>
